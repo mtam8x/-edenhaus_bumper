@@ -118,8 +118,8 @@ Provide your own cert files and store them into:
 or generate them over a script:
 
 ```sh
-$cd certs
-$. ../scripts/create_cert.sh
+cd certs
+../scripts/create_cert.sh
 ```
 
 ## Basic configs for docker
@@ -177,34 +177,34 @@ BUMPER_ANNOUNCE_IP=0.0.0.0 # replace with the server public ip
 > create with virtual env and run python project local
 
 ```sh
-$python3 -m pip install virtualenv --break-system-packages
-$python3 -m venv venv
-$source ./venv/bin/activate
-$python3 -m pip install .
+python3 -m pip install virtualenv --break-system-packages
+python3 -m venv venv
+source ./venv/bin/activate
+python3 -m pip install .
 
-$python3 -m bumper
+python3 -m bumper
 ```
 
 ### Code quality check
 
 ```sh
-$python3 -m pip install virtualenv --break-system-packages
-$python3 -m venv venv
-$source ./venv/bin/activate
-$python3 -m pip install -e .
-$python3 -m pip install -e .[dev]
+python3 -m pip install virtualenv --break-system-packages
+python3 -m venv venv
+source ./venv/bin/activate
+python3 -m pip install -e .
+python3 -m pip install -e .[dev]
 
-$clear && pre-commit run --all-files
-$clear && pytest
+clear && pre-commit run --all-files
+clear && pytest
 ```
 
 or
 
 ```sh
-$docker-compose -f dev.docker-compose.yaml build
-$docker-compose -f dev.docker-compose.yaml run bumper
+docker-compose -f docker-compose.yaml build
+docker-compose -f docker-compose.yaml run bumper
 
-$clear && pytest
+clear && pytest
 ```
 
 ---
